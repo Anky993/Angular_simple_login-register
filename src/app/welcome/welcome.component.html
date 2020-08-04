@@ -1,0 +1,44 @@
+
+<div>
+  <button class="btn btn-info" (click)="deleteAll()">Delete ALL</button>
+
+  <form [formGroup]= "updateForm">
+
+<table class="table table-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let student of data">
+        <td scope="col">{{student._id}}</td>
+        <td *ngIf="editRow"><input scope="col" class="form-control" formControlName = "FirstName" placeholder="Last Data : {{student.FirstName}}"></td>
+        <td *ngIf="!editRow">{{student.FirstName}}</td>
+        <td *ngIf="editRow"><input scope="col" class="form-control" formControlName = "LastName" placeholder="Last Data : {{student.LastName}}"></td>
+        <td *ngIf="!editRow">{{student.LastName}}</td>
+        <td *ngIf="editRow"><input scope="col" class="form-control" formControlName = "Email" placeholder="Last Data : {{student.Email}}"></td>
+        <td *ngIf="!editRow">{{student.Email}}</td>
+
+        <td *ngIf="!editRow">
+          <button class="btn btn-primary" (click)="editRow = true">edit</button>
+        </td>
+        <td *ngIf="editRow">
+          <button [disabled]= '!updateForm.valid' type="submit" class="btn btn-success" (click)="updatedata(student._id)">save</button>
+        </td>
+        <td *ngIf="editRow">
+          <button class="btn btn-danger" (click)="editRow=false">cancel</button>
+        </td>
+        <td>
+          <button class="btn btn-info" (click)="deletedata(student._id)">Delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</form>
+</div>

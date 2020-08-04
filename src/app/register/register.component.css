@@ -1,0 +1,38 @@
+
+.login{
+    width: 360px;
+    padding: 3% 2% 2%;
+    margin-top: 100px;
+    /* margin: auto; */
+    background-color: #f5f5f5;
+    border: solid 1px #ffffff;
+    border-radius: 2%;
+}
+.login-left {
+    text-align: center;
+    color: #fff;
+    margin-top: 12%;
+    margin-left: 2%;
+}
+.login-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    /* font-weight: bold; */
+    color: #383d41;
+    /* margin-top: 30%;
+    margin-bottom: 3%; */
+    cursor: pointer;
+}
+.para-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.visible {
+    position: relative;
+    padding-top: 0;
+    float: right;
+}
